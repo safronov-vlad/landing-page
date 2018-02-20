@@ -16,8 +16,12 @@
     <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png"/>
     <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png"/>
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png"/>
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/main.css">
+    <!-- build:css css/vendor.css-->
+    <link rel="stylesheet" href="libs/mdi/css/materialdesignicons.min.css"/>
+    <!-- endbuild-->
+    <!-- build:css css/main.css-->
+    <link rel="stylesheet" href="css/main.css"/>
+    <!-- endbuild-->
   </head>
   <body class="pagewrap">
     <div class="header_fixed">
@@ -27,60 +31,60 @@
       </div>
     </div>
     <div class="wrap">
-      <section class="block_intro">
-        <div class="slick">
-          <div class="slick__item">
-            <div class="container first">
-              <div class="block">
-                <div class="animated_text"><span>Lorem ipsum</span><span>dolor sit amet</span><span>duis autero dolor</span>
-                  <div class="animated_text__bl">
+      <div class="site_container">
+        <section class="block_intro">
+          <div class="slick">
+            <div class="slick__item">
+              <div class="container first">
+                <div class="block">
+                  <div class="animated_text"><span>INRIGHT</span><span>LANDING</span><span style="font-size: 20px;">Лучший инструмент для эффективных продаж!</span>
+                    <div class="animated_text__bl">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="overlay">
+                <div class="overlay__slide_bg"><img src="img/slider_1.jpg" alt="" role="presentation"/>
+                  <div class="overlay">
                   </div>
                 </div>
               </div>
             </div>
-            <div class="overlay">
-              <div class="overlay__slide_bg"><img src="img/bg5.jpg" alt="" role="presentation"/>
-                <div class="overlay">
+            <div class="slick__item">
+              <div class="container first">
+                <div class="block">
+                  <div class="animated_text"><span style="font-size: 25px;">Разработаем сайт</span><span>показывающий ваш товар или услугу</span><span>в самом выгодном свете!</span>
+                    <div class="animated_text__bl">
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="slick__item">
-            <div class="container first">
-              <div class="block">
-                <div class="animated_text"><span>Lorem ipsum</span><span>dolor sit amet</span><span>duis autero dolor</span>
-                  <div class="animated_text__bl">
+              <div class="overlay">
+                <div class="overlay__slide_bg"><img src="img/slider_2.jpg" alt="" role="presentation"/>
+                  <div class="overlay">
                   </div>
                 </div>
               </div>
             </div>
-            <div class="overlay">
-              <div class="overlay__slide_bg"><img src="img/bg6.jpg" alt="" role="presentation"/>
-                <div class="overlay">
+            <div class="slick__item">
+              <div class="container first">
+                <div class="block">
+                  <div class="animated_text"><span style="">Привлечем только заинтересованных</span><span>в вашем товаре или</span><span>услуге посетителей!</span>
+                    <div class="animated_text__bl">
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="slick__item">
-            <div class="container first">
-              <div class="block">
-                <div class="animated_text"><span>Lorem ipsum</span><span>dolor sit amet</span><span>duis autero dolor</span>
-                  <div class="animated_text__bl">
+              <div class="overlay">
+                <div class="overlay__slide_bg"><img src="img/slider_3.jpg" alt="" role="presentation"/>
+                  <div class="overlay">
                   </div>
                 </div>
               </div>
             </div>
-            <div class="overlay">
-              <div class="overlay__slide_bg"><img src="img/bg7.jpg" alt="" role="presentation"/>
-                <div class="overlay">
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
-      <section class="infoblock">
-        <div class="container">
+        </section>
+        <section class="infoblock">
           <div class="advantages_par">
             <h2>Наши преимущества
             </h2>
@@ -111,10 +115,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="infoblock">
-        <div class="container">
+        </section>
+        <section class="infoblock">
           <div class="block block--our_works">
             <h2 class="block_title">Наши работы
             </h2>
@@ -143,10 +145,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="infoblock">
-        <div class="container">
+        </section>
+        <section class="infoblock">
           <div class="block">
             <div class="works_scheme_par">
               <h2>Схема работы
@@ -173,10 +173,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="infoblock">
-        <div class="container">
+        </section>
+        <section class="infoblock">
           <div class="block">
             <div class="rates_par">
               <h2>Тарифы
@@ -251,12 +249,150 @@
                   </div>
                 </div>
               </div>
+              <div class="rates">
+                <div class="rates__item">
+                  <div class="rates__content"><span>Пакет услуг</span><span class="rates__name">Базовый</span>
+                    <div class="rates__divider">
+                    </div>
+                    <ul class="rates__uslugi">
+                      <li>1
+                      </li>
+                      <li>2
+                      </li>
+                      <li>3
+                      </li>
+                      <li>4
+                      </li>
+                      <li>5
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="rates__item">
+                  <div class="rates__content"><span>Пакет услуг</span><span class="rates__name">Средний</span>
+                    <div class="rates__divider">
+                    </div>
+                    <ul class="rates__uslugi">
+                      <li>1
+                      </li>
+                      <li>2
+                      </li>
+                      <li>3
+                      </li>
+                      <li>4
+                      </li>
+                      <li>5
+                      </li>
+                      <li>6
+                      </li>
+                      <li>7
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="rates__item">
+                  <div class="rates__content"><span>Пакет услуг</span><span class="rates__name">Максимальный</span>
+                    <div class="rates__divider">
+                    </div>
+                    <ul class="rates__uslugi">
+                      <li>1
+                      </li>
+                      <li>2
+                      </li>
+                      <li>3
+                      </li>
+                      <li>4
+                      </li>
+                      <li>5
+                      </li>
+                      <li>6
+                      </li>
+                      <li>7
+                      </li>
+                      <li>8
+                      </li>
+                      <li>9
+                      </li>
+                      <li>10
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="rates">
+                <div class="rates__item">
+                  <div class="rates__content"><span>Пакет услуг</span><span class="rates__name">Базовый</span>
+                    <div class="rates__divider">
+                    </div>
+                    <ul class="rates__uslugi">
+                      <li>1
+                      </li>
+                      <li>2
+                      </li>
+                      <li>3
+                      </li>
+                      <li>4
+                      </li>
+                      <li>5
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="rates__item">
+                  <div class="rates__content"><span>Пакет услуг</span><span class="rates__name">Средний</span>
+                    <div class="rates__divider">
+                    </div>
+                    <ul class="rates__uslugi">
+                      <li>1
+                      </li>
+                      <li>2
+                      </li>
+                      <li>3
+                      </li>
+                      <li>4
+                      </li>
+                      <li>5
+                      </li>
+                      <li>6
+                      </li>
+                      <li>7
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="rates__item">
+                  <div class="rates__content"><span>Пакет услуг</span><span class="rates__name">Максимальный</span>
+                    <div class="rates__divider">
+                    </div>
+                    <ul class="rates__uslugi">
+                      <li>1
+                      </li>
+                      <li>2
+                      </li>
+                      <li>3
+                      </li>
+                      <li>4
+                      </li>
+                      <li>5
+                      </li>
+                      <li>6
+                      </li>
+                      <li>7
+                      </li>
+                      <li>8
+                      </li>
+                      <li>9
+                      </li>
+                      <li>10
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="infoblock">
-        <div class="container">
+        </section>
+        <section class="infoblock">
           <div class="block">
             <div class="block__form_par">
               <div class="preview_form">
@@ -277,8 +413,8 @@
               </form>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
     <div class="navigate_buttons">
       <ul class="navigate_list">
@@ -296,6 +432,11 @@
         </li>
       </ul>
     </div>
-    <script src="js/vendor.js"></script>
+    <!-- build:js js/vendor.js-->
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="js/jquery.onepage-scroll.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild-->
   </body>
 </html>
