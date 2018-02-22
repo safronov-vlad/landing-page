@@ -353,6 +353,12 @@ $(document).ready(function(){
                             $(e + ' > section.active').find('.paralaxed').css({'transform': 'translateY(0%)'})
                         }
                     }
+                    else{
+                        if ($(e + ' > section.active').offset().top > 0) {
+                            $(e + ' > section.active').prev().find('.fogged').css({'opacity': params.maximum_opacity * ( ( params.windowH - $(e + ' > section.active').offset().top ) / one_percent ) / 100})
+                            $(e + ' > section.active').prev().find('.paralaxed').css('transform', 'translateY(' + 0.3 * ( ( params.windowH - $(e + ' > section.active').offset().top ) / one_percent ) + '%)')
+                        }
+                    }
                 }
                 //прилипалка
                 if (!flag) {

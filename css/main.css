@@ -1,5 +1,3 @@
-@import "http://fonts.fontstorage.com/import/museosanscyrl.css";
-@import "http://fonts.fontstorage.com/import/roboto.css";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -65,6 +63,7 @@ a {
   outline: 0;
   border: 0;
   margin: 0;
+  font-family: "Gilroy" !important;
   border: 0; }
 
 .wrap {
@@ -87,7 +86,8 @@ section {
   transition: all 1000ms ease;
   position: relative;
   display: inline-block;
-  float: left; }
+  float: left;
+  overflow: hidden; }
   section h2 {
     font-size: 40px;
     font-family: Tahoma;
@@ -360,13 +360,16 @@ section {
       font-size: 23px;
       font-weight: 400;
       margin-top: 10px;
-      line-height: 45px; }
+      line-height: 45px;
+      display: block; }
     .rates .rates__item .rates__divider {
       width: 100%;
       height: 4px;
       background: #ffc402; }
     .rates .rates__item .rates__uslugi li {
-      line-height: 30px; }
+      line-height: 25px;
+      font-size: 13px;
+      padding: 10px 0; }
     .rates .rates__item .rates__uslugi li:nth-child(even) {
       background: rgba(205, 205, 205, 0.3); }
 
@@ -501,3 +504,157 @@ section {
 
 .container.first .block {
   padding: 25px 0; }
+
+.overlay_modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  z-index: 5; }
+
+.modal {
+  display: none;
+  position: relative;
+  max-width: 460px;
+  margin: 40px auto 0;
+  padding: 30px;
+  background: white; }
+
+.modal--shadow {
+  position: absolute;
+  left: -200px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out; }
+
+.modal_window {
+  max-width: 1200px;
+  width: 100%;
+  height: -webkit-calc( 100% - 160px);
+  height: calc( 100% - 160px);
+  top: 100px;
+  background: #fff;
+  position: absolute;
+  left: -webkit-calc( (100% - 1240px) / 2);
+  left: calc( (100% - 1240px) / 2);
+  border-radius: 8px;
+  overflow: hidden;
+  display: none; }
+
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+.modal-left {
+  width: 70%;
+  height: 100%;
+  float: left;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+  .modal-left img {
+    width: 100%; }
+  .modal-left::-webkit-scrollbar {
+    width: 8px; }
+  .modal-left::-webkit-scrollbar-track {
+    background: #eee; }
+  .modal-left::-webkit-scrollbar-thumb {
+    background: #ffc401; }
+
+.modal_window__close {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: 10px;
+  top: 10px;
+  background: url(../img/form_close.svg);
+  -webkit-transition: opacity 300ms ease;
+  transition: opacity 300ms ease;
+  cursor: pointer;
+  z-index: 555; }
+  .modal_window__close:hover {
+    opacity: 0.6; }
+
+.modal-right {
+  float: left;
+  width: 30%;
+  height: -webkit-calc( 100% - 45px);
+  height: calc( 100% - 45px);
+  box-shadow: 0 0 6px 0 #999;
+  padding-top: 45px;
+  position: relative; }
+  .modal-right h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold; }
+  .modal-right span {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 20px;
+    padding: 0 30px;
+    line-height: 25px; }
+  .modal-right ul {
+    margin-left: 50px;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px; }
+    .modal-right ul .first {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      list-style: none;
+      margin-left: -20px;
+      color: #999;
+      font-weight: bold; }
+    .modal-right ul li {
+      margin: 0 0 10px;
+      font-size: 16px;
+      list-style-type: square; }
+  .modal-right a.order {
+    display: inline-block;
+    width: 70%;
+    line-height: 45px;
+    margin-bottom: 20px;
+    border: 2px solid #ffc402;
+    margin: 0 -webkit-calc( 15% - 2px) 20px;
+    margin: 0 calc( 15% - 2px) 20px;
+    text-align: center;
+    color: #333; }
+
+.modal_item_description {
+  display: none; }
+  .modal_item_description.active {
+    display: block; }
+
+.item_form {
+  padding: 20px;
+  display: none; }
+  .item_form.active {
+    display: block; }
+  .item_form input {
+    padding: 10px;
+    width: -webkit-calc( 100% - 20px);
+    width: calc( 100% - 20px);
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 2px; }
+    .item_form input[type=submit] {
+      width: 70%;
+      display: table;
+      margin: 0 auto;
+      border-radius: 20px;
+      text-transform: uppercase;
+      border-color: #ffc402;
+      line-height: 30px;
+      padding: 0; }
+
+li.rates__price {
+  border: 2px solid #ffc401;
+  font-size: 16px !important;
+  background: #fff !important; }
