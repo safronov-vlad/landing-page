@@ -122,20 +122,6 @@ $(document).ready(function(){
     //     my_func(parseInt($(this).find('a').attr('data-id')))
     // })
 
-    $('.slick').slick({
-        dots: true,
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        speed: 1000,
-        autoplay: true,
-        autoplaySpeed: 6000,
-        arrows: false,
-        pauseOnHover: false,
-        pauseOnDotsHover: true,
-    })
-
-
     //детище
     //вкл выкл скролл
     var keys = {37: 1, 38: 1, 39: 1, 40: 1};
@@ -172,25 +158,27 @@ $(document).ready(function(){
         document.onkeydown = null;
     }
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-        params = {
-            windowH : $(window).height(),
-            scroll_to_delay : 250,
-            speed : 250,
+        iscroll = function(e){
+            params = {
+                windowH : $(window).height(),
+                scroll_to_delay : 250,
+                speed : 250,
+            }
+
+            $($( e + ' > section')[0]).addClass('active')
+
+            document.addEventListener('scroll', function (event) {
+                //change data-current
+                if( $( e + ' > section.active').offset().top < - ( params.windowH / 2 ) ){
+                    $( e + ' > section.active').removeClass('active').next().addClass('active');
+                    $(e).css('background',$(e + ' > section.active').data('color'));
+                }
+                else if ( $(e + ' > section.active').offset().top > params.windowH / 2 ){
+                    $( e + ' > section.active').removeClass('active').prev().addClass('active');
+                    $(e).css('background',$(e + ' > section.active').data('color'));
+                }
+            }, true)
         }
-
-        $($('.container > section')[0]).addClass('active')
-
-        document.addEventListener('scroll', function (event) {
-            //change data-current
-            if( $('.container > section.active').offset().top < - ( params.windowH / 2 ) ){
-                $('.container > section.active').removeClass('active').next().addClass('active');
-                $('.container').css('background',$(e + ' > section.active').data('color'));
-            }
-            else if ( $(e + ' > section.active').offset().top > params.windowH / 2 ){
-                $('.container > section.active').removeClass('active').prev().addClass('active');
-                $('.container').css('background',$(e + ' > section.active').data('color'));
-            }
-        }, true)
         $(window).resize(function(){
             params.windowH = $(window).height()
         })
@@ -367,6 +355,20 @@ $(document).ready(function(){
                 }
             }, true)
         }
+
+        $('.slick').slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            speed: 1000,
+            autoplay: true,
+            autoplaySpeed: 6000,
+            arrows: false,
+            pauseOnHover: false,
+            pauseOnDotsHover: true,
+        })
+
     }
     iscroll('.site_container')
 

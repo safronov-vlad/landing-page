@@ -42,7 +42,7 @@
 (function($){    
     modals();
     function modals() {
-        var body = $('body');
+        var body = $('.wrap');
         // обертка для модального окна
         var overlay = $('.overlay_modal');
         // селектор ссылки для открытия окна
@@ -95,7 +95,7 @@
                     //minimumResultsForSearch: Infinity
                 });
             }
-            body.css({overflow: 'hidden'});
+            body.css({'overflow-y' : 'hidden'});
             $('#wrapper').css({'filter' : 'blur(6px)'})
             $('.top_bar').css({'filter' : 'blur(6px)'})
         }
@@ -127,7 +127,7 @@
             else {
                 overlay.fadeOut(0);
                 modals.fadeOut(0);
-                body.css({overflow: 'auto'});
+                body.css({'overflow-y' : 'scroll'});
 				$('#wrapper').css({'filter' : 'blur(0px)'})
                 $('.top_bar').css({'filter' : 'blur(0px)'})
                 var modal = modals.filter('.modal--open');
