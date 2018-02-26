@@ -114,8 +114,6 @@ $(document).ready(function(){
     // })
     //
     my_func = function(e){
-        $($('.navigate_list__navigate_item')[e]).addClass('active')
-        $($('.navigate_list__navigate_item')[e]).siblings().removeClass('active')
         $('.wrap').animate({ scrollTop : $('.wrap').scrollTop() + $('.site_container > section[data-id=' + e + ']').offset().top }, 600)
     }
     // $('body').on('click', '.navigate_list__navigate_item', function(){
@@ -198,6 +196,7 @@ $(document).ready(function(){
             one_percent = params.windowH / 100
             //выставление параметров при загрузке страницы
             $($(e + ' > section')[0]).addClass('active')
+            $($('.header_fixed__top_bar li')[0]).addClass('active')
             for (i = 0; i < $(e + ' > section').length; i++) {
                 $($(e + ' > section')[i]).attr('data-id', i)
                 if (!$($(e + ' > section')[i]).attr('data-color')) {
@@ -304,9 +303,11 @@ $(document).ready(function(){
             document.addEventListener('scroll', function (event) {
                 //переключение авктивного блока
                 if ($(e + ' > section.active').offset().top < -(($(e + ' > section.active').height() - params.windowH) + params.windowH / 2 )) {
-                    $(e + ' > section.active').removeClass('active').next().addClass('active');
+                    $(e + ' > section.active').removeClass('active').next().addClass('active')
                     $($('.navigate_list__navigate_item')[$(e + ' > section.active').data('id')]).addClass('active')
                     $($('.navigate_list__navigate_item')[$(e + ' > section.active').data('id')]).siblings().removeClass('active')
+                    $($('.header_fixed__top_bar li')[$(e + ' > section.active').data('id')]).addClass('active')
+                    $($('.header_fixed__top_bar li')[$(e + ' > section.active').data('id')]).siblings().removeClass('active')
                     if ($(e + ' > section.active').data('color')) {
                         $(e + ' > section[data-color]').css('background', $(e + ' > section.active').data('color'))
                     }
@@ -315,6 +316,8 @@ $(document).ready(function(){
                     $(e + ' > section.active').removeClass('active').prev().addClass('active');
                     $($('.navigate_list__navigate_item')[$(e + ' > section.active').data('id')]).addClass('active')
                     $($('.navigate_list__navigate_item')[$(e + ' > section.active').data('id')]).siblings().removeClass('active')
+                    $($('.header_fixed__top_bar li')[$(e + ' > section.active').data('id')]).addClass('active')
+                    $($('.header_fixed__top_bar li')[$(e + ' > section.active').data('id')]).siblings().removeClass('active')
                     if ($(e + ' > section.active').data('color')) {
                         $(e + ' > section[data-color]').css('background', $(e + ' > section.active').data('color'))
                     }
